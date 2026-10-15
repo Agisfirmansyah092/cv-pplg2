@@ -1,5 +1,5 @@
 <?php
-$dashboardHref = '../../index.php#students';
+$dashboardHref = '../../dashboard.html#students';
 
 // DATA DIRI - EDIT BAGIAN INI SAJA
 $nama = "Carlita Wan pertiwi";

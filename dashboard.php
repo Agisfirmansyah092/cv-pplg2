@@ -23,6 +23,22 @@ foreach ($cvFiles as $cvFile) {
         'status' => 'CV tersedia',
         'skills' => [],
         'slug' => $slug,
+        'page' => 'cv.html',
+    ];
+}
+
+if (is_file(__DIR__ . '/src/yoga/index.php')) {
+    $students[] = [
+        'number' => str_pad((string) (count($students) + 1), 2, '0', STR_PAD_LEFT),
+        'name' => 'Yoga Hazimulfikri',
+        'nickname' => 'Yoga',
+        'role' => 'Developer',
+        'category' => 'developer',
+        'tone' => $tones[count($students) % count($tones)],
+        'status' => 'CV tersedia',
+        'skills' => [],
+        'slug' => 'yoga',
+        'page' => 'index.html',
     ];
 }
 
@@ -38,6 +54,7 @@ $categoryLabels = ['developer' => 'Developer'];
     <meta name="description" content="Kenali siswa kelas developer lewat profil, keahlian, dan CV mereka.">
     <title>Direktori Kelas Developer 2026 | CV &amp; Portofolio Siswa</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="site-shell">
@@ -87,7 +104,7 @@ $categoryLabels = ['developer' => 'Developer'];
                             <div><span class="code-purple">$students</span> <span class="code-muted">=</span> <span class="code-yellow">[</span></div>
                             <?php foreach (array_slice($students, 0, 3) as $student): ?>
                                 <div class="code-indent"><span class="code-yellow">[</span> <span class="code-green">'<?= htmlspecialchars($student['name'], ENT_QUOTES, 'UTF-8') ?>'</span><span class="code-muted">,</span></div>
-                                <div class="code-indent code-indent-two"><span class="code-blue">'src/<?= htmlspecialchars($student['slug'], ENT_QUOTES, 'UTF-8') ?>/cv.php'</span> <span class="code-yellow">]</span><span class="code-muted">,</span></div>
+                                <div class="code-indent code-indent-two"><span class="code-blue">'src/<?= htmlspecialchars($student['slug'], ENT_QUOTES, 'UTF-8') ?>/<?= htmlspecialchars($student['page'], ENT_QUOTES, 'UTF-8') ?>'</span> <span class="code-yellow">]</span><span class="code-muted">,</span></div>
                             <?php endforeach; ?>
                             <div><span class="code-yellow">]</span><span class="code-muted">;</span></div>
                             <div class="editor-comment">// building the next generation</div>
@@ -147,7 +164,7 @@ $categoryLabels = ['developer' => 'Developer'];
                             data-name="<?= htmlspecialchars($searchText, ENT_QUOTES, 'UTF-8') ?>"
                             data-category="<?= htmlspecialchars($student['category'], ENT_QUOTES, 'UTF-8') ?>"
                         >
-                            <a class="student-card-link" href="src/<?= rawurlencode($student['slug']) ?>/cv.php" aria-label="Lihat CV <?= htmlspecialchars($student['name'], ENT_QUOTES, 'UTF-8') ?>">
+                            <a class="student-card-link" href="src/<?= rawurlencode($student['slug']) ?>/<?= rawurlencode($student['page']) ?>" aria-label="Lihat CV <?= htmlspecialchars($student['name'], ENT_QUOTES, 'UTF-8') ?>">
                                 <div class="portrait-panel">
                                     <span class="portrait-grain" aria-hidden="true"></span>
                                     <span class="portrait-number"><?= htmlspecialchars($student['number'], ENT_QUOTES, 'UTF-8') ?> / DEVELOPER</span>

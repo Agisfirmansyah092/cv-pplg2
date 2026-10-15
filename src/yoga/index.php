@@ -1109,7 +1109,7 @@ $foto = "foto.jpg";
                 <!-- DASHBOARD -->
 
                 <a
-                    href="dashboard.php"
+                    href="../../dashboard.html#students"
                     class="nav-btn btn-dashboard"
                 >
 
@@ -1122,11 +1122,11 @@ $foto = "foto.jpg";
                 <!-- LOGOUT -->
 
                 <a
-                    href="logout.php"
+                    href="../../index.html"
                     class="nav-btn btn-logout"
                 >
 
-                    🚪 Logout
+                    📋 Daftar CV
 
                 </a>
 

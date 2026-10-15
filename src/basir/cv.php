@@ -309,7 +309,7 @@ $foto = "logo.jpg";
     <!-- TOMBOL KEMBALI -->
     <div class="tombol-kembali">
 
-        <a href="dashboard.php" class="btn-dashboard">
+        <a href="../../dashboard.html#students" class="btn-dashboard">
             ← KEMBALI KE DASHBOARD
         </a>
 

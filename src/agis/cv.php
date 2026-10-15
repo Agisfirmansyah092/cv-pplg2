@@ -1,6 +1,6 @@
 <?php
 $studentAssetPrefix = 'gambar/';
-$dashboardHref = '../../index.php#students';
+$dashboardHref = '../../dashboard.html#students';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -118,6 +118,15 @@ $dashboardHref = '../../index.php#students';
 			height: 142px;
 			object-fit: cover;
 			width: 116px;
+		}
+
+		.foto-placeholder {
+			align-items: center;
+			color: var(--teal);
+			display: flex;
+			font-size: 28px;
+			font-weight: 800;
+			justify-content: center;
 		}
 
 		.identity {
@@ -425,7 +434,11 @@ $dashboardHref = '../../index.php#students';
 	</nav>
 	<div class="cv">
 		<header class="masthead">
-			<img class="foto" src="<?= htmlspecialchars($studentAssetPrefix . 'agis.jpeg', ENT_QUOTES, 'UTF-8') ?>" alt="Foto Muhamad Al Agis Firmansyah">
+			<?php if (is_file(__DIR__ . '/' . $studentAssetPrefix . 'agis.jpeg')): ?>
+				<img class="foto" src="<?= htmlspecialchars($studentAssetPrefix . 'agis.jpeg', ENT_QUOTES, 'UTF-8') ?>" alt="Foto Muhamad Al Agis Firmansyah">
+			<?php else: ?>
+				<div class="foto foto-placeholder" role="img" aria-label="Foto Muhamad Al Agis Firmansyah tidak tersedia">AG</div>
+			<?php endif; ?>
 			<div class="identity">
 				<span class="label">Curriculum Vitae</span>
 				<h1>Muhamad Al Agis Firmansyah</h1>

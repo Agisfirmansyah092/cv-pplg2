@@ -140,7 +140,7 @@ $foto = "foto.jpg"; // nama file foto, taruh di folder yg sama
 <div class="container">
     <!-- BAGIAN HEADER + FOTO -->
     <div class="header">
-        <img src="selvi.jpeg" alt="Foto <?php echo $nama; ?>">
+        <img src="<?php echo $foto; ?>" alt="Foto <?php echo $nama; ?>">
         <h1><?php echo $nama; ?></h1>
         <p><?php echo $kelas; ?> | <?php echo $jurusan; ?></p>
     </div>

@@ -114,7 +114,7 @@ $bahasa = [
                 <!-- FOTO PROFIL -->
                 <div class="flex justify-center mb-6">
                     <div class="relative w-44 h-44 rounded-full p-2 bg-gradient-to-tr from-pinky-400 via-pinky-300 to-pinky-100 shadow-xl">
-                        <?php if (file_exists($foto_profil)): ?>
+                        <?php if (file_exists(__DIR__ . '/' . $foto_profil)): ?>
                             <img src="<?php echo htmlspecialchars($foto_profil); ?>" alt="Foto Profil" class="w-full h-full object-cover rounded-full">
                         <?php else: ?>
                             <!-- Placeholder jika foto belum diisi/diupload -->
