@@ -4,12 +4,12 @@ The dashboard presents a class of student developers and their CVs. Its visual d
 
 ## File structure
 
-- `index.html` is the static landing page and links to each student profile.
+- `index.html` is the static main page and displays the class dashboard directly.
 - `dashboard.html` is the static class dashboard. Its search and category filters use `script.js`.
 - `style.css` contains the shared dashboard and landing-page styles.
 - Static CV pages are saved as `src/<student-slug>/cv.html`; Yoga's profile is `src/yoga/index.html`.
 - Student photos and other local assets live beside the corresponding profile page and use paths relative to that folder.
-- The `.php` files are retained as local source/templates for use with PHP-enabled hosting. GitHub Pages serves the `.html` files and does not execute PHP.
+- `index.php` redirects PHP-enabled local servers to `index.html`. Other `.php` files are retained as local source/templates. GitHub Pages serves the `.html` files and does not execute PHP.
 
 ## Visual principles
 
