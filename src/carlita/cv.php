@@ -1,0 +1,291 @@
+<?php
+$dashboardHref = '../../index.php#students';
+
+// DATA DIRI - EDIT BAGIAN INI SAJA
+$nama = "Carlita Wan pertiwi";
+$nis = "12345";
+$kelas = "XII PPLG 2";
+$sekolah = "SMKN 1 Leuwimunding";
+$jurusan = "Pengembangan Perangkat Lunak dan Gim";
+$tempat_lahir = "Majalengka";
+$tgl_lahir = "31 Agustus 2008";
+$alamat = "Jl. K.H. Abdul Halim No. 1, Majalengka";
+$no_hp = "0812-3456-7890";
+$email = "carlitaaapertiwii@gmail.com";
+$hobi = "Bermain game, Masak";
+$cita_cita = "Web Developer";
+$tentang = "Halo! Saya siswa PPLG yang suka belajar membuat website dan aplikasi. 
+            Saya sedang belajar PHP, HTML, CSS, dan Database MySQL.";
+$foto = "https://i.ibb.co.com/mr1C0nDq/IMG-20260524-WA0192.jpg"; // nama file foto, taruh di folder yg sama
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - <?php echo $nama; ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        body {
+            background: linear-gradient(180deg, #FFE8F0 0%, #E8F0FF 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        body::before {
+            width: 260px; height: 260px;
+            background: #FFD6E8;
+            top: -80px; left: -80px;
+            opacity: 0.7;
+        }
+        body::after {
+            width: 220px; height: 220px;
+            background: #D6E9FF;
+            bottom: -60px; right: -60px;
+            opacity: 0.7;
+        }
+        .container {
+            max-width: 760px;
+            margin: 10px auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 0 #FBD3E4, 0 12px 30px rgba(150, 100, 150, 0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        .header {
+            background: linear-gradient(135deg, #FFB3D1 0%, #C6B7FF 100%);
+            color: #4A3B63;
+            text-align: center;
+            padding: 34px 20px 44px;
+        }
+        .header img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            box-shadow: 0 6px 18px rgba(150,100,150,0.25);
+            object-fit: cover;
+            margin-bottom: 14px;
+            background: #fff;
+        }
+        .header h1 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+        }
+        .header p {
+            font-size: 14px;
+            margin-top: 4px;
+            opacity: 0.85;
+        }
+        .content {
+            padding: 30px;
+            margin-top: -18px;
+        }
+        .card {
+            background: #FFF9FC;
+            border: 2px dashed #FBEAF0;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 18px;
+        }
+        .card h2 {
+            font-family: 'Baloo 2', sans-serif;
+            color: #E85A9B;
+            margin-bottom: 14px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card p { color: #6B5C7A; font-size: 14px; line-height: 1.6; }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .info-item b {
+            color: #4A3B63;
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .info-item span {
+            color: #6B5C7A;
+            font-size: 14px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-list span {
+            background: #C6D9FF;
+            color: #2E4B8F;
+            border: 2px solid #2E4B8F;
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .kontak-btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        .kontak-btns a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 11px 20px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn-wa {
+            background: #B8E8C0;
+            color: #276B3A;
+            border: 2px solid #276B3A;
+            box-shadow: 0 4px 0 #276B3A;
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #276B3A; }
+        .btn-email {
+            background: #FFC2CE;
+            color: #A8324A;
+            border: 2px solid #A8324A;
+            box-shadow: 0 4px 0 #A8324A;
+        }
+        .btn-email:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #A8324A; }
+
+        .btn-back-wrap {
+            text-align: center;
+            margin-top: 4px;
+        }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 26px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            background: #C6B7FF;
+            color: #4A3B63;
+            border: 2px solid #6B4E86;
+            box-shadow: 0 4px 0 #6B4E86;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .btn-back:hover { transform: translateY(-2px); box-shadow: 0 6px 0 #6B4E86; }
+
+        .footer {
+            text-align: center;
+            padding: 18px;
+            background: #FBF6FA;
+            color: #A497B5;
+            font-size: 12px;
+        }
+        @media(max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <img src="<?php echo $foto; ?>" alt="Foto <?php echo $nama; ?>">
+        <h1><?php echo $nama; ?> 🌸</h1>
+        <p><?php echo $kelas; ?> • <?php echo $jurusan; ?></p>
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+            <h2>💭 Tentang saya</h2>
+            <p><?php echo $tentang; ?></p>
+        </div>
+
+        <div class="card">
+            <h2>🎀 Data pribadi</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <b>NIS</b>
+                    <span><?php echo $nis; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Tempat, tgl lahir</b>
+                    <span><?php echo $tempat_lahir; ?>, <?php echo $tgl_lahir; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Alamat</b>
+                    <span><?php echo $alamat; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Sekolah</b>
+                    <span><?php echo $sekolah; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Hobi</b>
+                    <span><?php echo $hobi; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Cita-cita</b>
+                    <span><?php echo $cita_cita; ?></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✨ Skill</h2>
+            <div class="skill-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💌 Hubungi saya</h2>
+            <div class="kontak-btns">
+                <a href="https://wa.me/62<?php echo substr($no_hp, 1); ?>" target="_blank" class="btn-wa">💬 WhatsApp</a>
+                <a href="mailto:<?php echo $email; ?>" class="btn-email">✉️ Email</a>
+            </div>
+        </div>
+
+        <div class="btn-back-wrap">
+            <a href="<?php echo htmlspecialchars($dashboardHref, ENT_QUOTES, 'UTF-8'); ?>" class="btn-back">⬅️ Kembali ke dashboard</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Dibuat dengan PHP oleh <?php echo $nama; ?></p>
+    </div>
+
+</div>
+
+</body>
+</html>

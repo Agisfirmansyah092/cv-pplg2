@@ -1,0 +1,217 @@
+<?php
+// DATA DIRI - EDIT BAGIAN INI SAJA
+$nama = "Selvi Nur Hijriyahani";
+$nis = "12345";
+$kelas = "XII PPLG 2";
+$sekolah = "SMKN 1 Leuwimunding";
+$jurusan = "Pengembangan Perangkat Lunak dan Gim";
+$tempat_lahir = "Majalengka";
+$tgl_lahir = "29 Desember 2008";
+$alamat = "Desa Paningkiran, Majalengka";
+$no_hp = "0831-5394-6192";
+$email = "selvinurhijriyahani08@email.com";
+$hobi = "nyanyi";
+$cita_cita = "Aktor";
+$tentang = "Halo! Saya siswa PPLG yang suka belajar membuat website dan aplikasi. 
+            Saya sedang belajar PHP, HTML, CSS, dan Database MySQL.";
+$foto = "foto.jpg"; // nama file foto, taruh di folder yg sama
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - <?php echo $nama; ?></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 30px;
+        }
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .info-item {
+            margin-bottom: 10px;
+        }
+        .info-item b {
+            color: #333;
+            display: block;
+            font-size: 14px;
+        }
+        .info-item span {
+            color: #555;
+            font-size: 15px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-list span {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .kontak a {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .kontak a.email {
+            background: #EA4335;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f1f1;
+            color: #777;
+            font-size: 14px;
+        }
+        @media(max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- BAGIAN HEADER + FOTO -->
+    <div class="header">
+        <img src="selvi.jpeg" alt="Foto <?php echo $nama; ?>">
+        <h1><?php echo $nama; ?></h1>
+        <p><?php echo $kelas; ?> | <?php echo $jurusan; ?></p>
+    </div>
+
+    <!-- BAGIAN ISI -->
+    <div class="content">
+        
+        <!-- TENTANG SAYA -->
+        <div class="card">
+            <h2>Tentang Saya</h2>
+            <p><?php echo $tentang; ?></p>
+        </div>
+
+        <!-- DATA PRIBADI -->
+        <div class="card">
+            <h2>Data Pribadi</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <b>NIS</b>
+                    <span><?php echo $nis; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Tempat, Tgl Lahir</b>
+                    <span><?php echo $tempat_lahir; ?>, <?php echo $tgl_lahir; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Alamat</b>
+                    <span><?php echo $alamat; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Sekolah</b>
+                    <span><?php echo $sekolah; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Hobi</b>
+                    <span><?php echo $hobi; ?></span>
+                </div>
+                <div class="info-item">
+                    <b>Cita-cita</b>
+                    <span><?php echo $cita_cita; ?></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILL -->
+        <div class="card">
+            <h2>Skill</h2>
+            <div class="skill-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+        <!-- KONTAK -->
+        <div class="card kontak">
+            <h2>Hubungi Saya</h2>
+            <a href="https://wa.me/message/KGU2UIQGTD3XD1">WhatsApp</a>
+            <a href="mailto:<?php echo $email; ?>" class="email">Email</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 Dibuat dengan PHP oleh <?php echo $nama; ?></p>
+    </div>
+
+</div>
+
+</body>
+</html>
